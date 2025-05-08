@@ -2,11 +2,10 @@
 
 Personal repo to store all useful, shareable configurations between computers.
 
-## nvim
+## [nvim](./nvim/)
 
 Mega awesome Neovim configurations.
 
-## code
+## [code](./code/)
 
 VS Code settings
-
