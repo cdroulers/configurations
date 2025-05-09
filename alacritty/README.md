@@ -1,0 +1,3 @@
+# Alacritty
+
+Alacritty configurations
