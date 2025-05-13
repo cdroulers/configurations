@@ -5,3 +5,5 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
