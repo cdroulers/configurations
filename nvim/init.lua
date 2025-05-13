@@ -413,7 +413,7 @@ require('lazy').setup({
         -- },
         pickers = {
           find_files = {
-            find_command = {'rg', '--files', '--hidden', '-g', '!.git'},
+            find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
           },
         },
         extensions = {
@@ -778,6 +778,7 @@ require('lazy').setup({
         javascriptreact = { 'prettier', stop_after_first = true },
         typescript = { 'prettier', stop_after_first = true },
         typescriptreact = { 'prettier', stop_after_first = true },
+        vue = { 'volar', stop_after_first = true },
       },
     },
   },
