@@ -6,6 +6,14 @@ Stuff for OSX
 
 Creates symlinks from root folder configurations for apps to the right path. e.g. nvim, alacritty, tmux, etc.
 
+## Manual steps (FOR NOW)
+
+Install tpm for tmux
+
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+Then use `prefix + I` to install plugins.
+
 ## Keymaps
 
 Remaps I've set in OSX to make more sense
