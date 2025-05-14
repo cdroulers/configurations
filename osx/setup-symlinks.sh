@@ -9,3 +9,4 @@ sudo ln -sfn "$ROOT_DIR/tmux/.tmux.conf" ~/.tmux.conf
 sudo ln -sfn "$ROOT_DIR/zsh/.zprofile" ~/.zprofile
 sudo ln -sfn "$ROOT_DIR/zsh/.zshrc" ~/.zshrc
 sudo ln -sfn "$ROOT_DIR/zsh/oh-my-zsh" ~/.oh-my-zsh
+
