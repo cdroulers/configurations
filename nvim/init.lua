@@ -169,10 +169,11 @@ vim.opt.confirm = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Other practical shortcuts / keybindings / keymaps
-vim.keymap.set('n', '<C-d>', '<C-d>zz')
-vim.keymap.set('n', '<C-u>', '<C-u>zz')
-vim.keymap.set('n', 'n', 'nzzzv')
-vim.keymap.set('n', 'N', 'Nzzzv')
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Move up half a page and center line' })
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Move down half a page and center line' })
+vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Move to next search item and center line' })
+vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Move to previous search item and center line' })
+vim.keymap.set('n', '<leader>bc', ':bp<BAR>bd#<CR>', { desc = 'Close current buffer, keep window open' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
@@ -363,6 +364,7 @@ require('lazy').setup({
         { '<leader>s', group = '[S]earch' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        { '<leader>b', group = '[B]uffer' },
       },
     },
   },
@@ -795,7 +797,7 @@ require('lazy').setup({
         javascriptreact = { 'prettier', stop_after_first = true },
         typescript = { 'prettier', stop_after_first = true },
         typescriptreact = { 'prettier', stop_after_first = true },
-        vue = { 'volar', stop_after_first = true },
+        vue = { 'prettier', stop_after_first = true },
       },
     },
   },
