@@ -5,6 +5,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+export LESS="--no-init --quit-if-one-screen --RAW-CONTROL-CHARS"
 
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
