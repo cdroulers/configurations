@@ -10,7 +10,13 @@ It should be auto-linked with above script, but if not, install with this and re
 
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-## Next steps
+## Install Powerlevel10k (theme / prompt manager)
+
+https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#oh-my-zsh
+
+Above install is required since I don't commit the `custom` folder.
+
+## Next steps (probably all done for now)
 
 Finish setup for theme for zsh and tmux
 
