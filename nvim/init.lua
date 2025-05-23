@@ -706,7 +706,7 @@ require('lazy').setup({
         automatic_enable = true,
         handlers = {
           function(server_name)
-            local server = servers[server_name] or {}
+            local server = {}
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
