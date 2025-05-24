@@ -12,7 +12,7 @@ Personal repo to store all useful, shareable configurations between computers.
 
 Mega awesome Neovim configurations.
 
-INSTALL `ripgrep`!
+Don't forget to install `ripgrep`!
 
 ## [code](./code/)
 
