@@ -2,9 +2,17 @@
 
 Personal repo to store all useful, shareable configurations between computers.
 
+*Next steps*
+
+- Need to configure some things per OS
+  - alacritty.toml has direct reference to tmux executable, which varies per OS.
+  - .zprofile has stuff specific to OSX, need to if it.
+
 ## [nvim](./nvim/)
 
 Mega awesome Neovim configurations.
+
+Don't forget to install `ripgrep`!
 
 ## [code](./code/)
 
