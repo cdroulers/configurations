@@ -132,7 +132,7 @@ history = 5000
 
 # Will only work on OSX, gotta find how to fix that.
 [terminal.shell]
-program = "/opt/homebrew/bin/tmux"
+program = "/usr/local/bin/tmux"
 
 [window]
 decorations = "none"
