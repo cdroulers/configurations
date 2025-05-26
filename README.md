@@ -26,6 +26,8 @@ Alacritty configurations
 
 tmux configurations
 
+Make sure to install [TPM](https://github.com/tmux-plugins/tpm)
+
 # OS specific stuff
 
 ## [osx](./osx)
