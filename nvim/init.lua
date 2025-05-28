@@ -258,9 +258,20 @@ require('lazy').setup({
       local harpoon = require 'harpoon'
       harpoon.setup {}
 
+      local harpoon_extensions = require 'harpoon.extensions'
+      harpoon:extend(harpoon_extensions.builtins.highlight_current_file())
+
       vim.keymap.set('n', '<leader>ha', function()
         harpoon:list():add()
       end, { desc = '[H]arpoon [A]dd to list' })
+
+      vim.keymap.set('n', '<leader>hr', function()
+        harpoon:list():remove()
+      end, { desc = '[H]arpoon [R]emove from list' })
+
+      vim.keymap.set('n', '<leader>hc', function()
+        harpoon:list():clear()
+      end, { desc = '[H]arpoon [C]clear list' })
 
       vim.keymap.set('n', '<leader>hl', function()
         harpoon.ui:toggle_quick_menu(harpoon:list())
