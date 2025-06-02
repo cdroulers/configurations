@@ -250,7 +250,14 @@ require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'ThePrimeagen/vim-be-good',
-  'tpope/vim-fugitive',
+  {
+    'tpope/vim-fugitive',
+    config = function()
+      vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[G]it [S]tatus' })
+
+      vim.keymap.set('n', '<leader>gd', ':vert Gdiff<CR>', { desc = '[G]it [D]iff (vertical split)' })
+    end,
+  },
   {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
@@ -404,6 +411,7 @@ require('lazy').setup({
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = '[H]arpoon' },
         { '<leader>b', group = '[B]uffer' },
+        { '<leader>g', group = '[G]it' },
       },
     },
   },
