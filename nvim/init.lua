@@ -250,6 +250,7 @@ require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'ThePrimeagen/vim-be-good',
+  'tpope/vim-fugitive',
   {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
