@@ -314,6 +314,15 @@ require('lazy').setup({
   },
   {
     'github/copilot.vim',
+    config = function()
+      -- Using `api.nvim_set_keymap' otherwise there's weird characters appended to suggestion. See https://github.com/orgs/community/discussions/11611
+      vim.api.nvim_set_keymap('i', '<C-o>', 'copilot#Accept()', { desc = 'Copilot Accept Suggestion', expr = true, silent = true, noremap = false })
+      -- vim.keymap.set('i', '<C-o>', 'copilot#Accept("")', { desc = 'Accept Copilot suggestion', expr = true, noremap = true, silent = true })
+      vim.api.nvim_set_keymap('i', '<C-p>', 'copilot#Dismiss()', { desc = 'Copilot Dismiss Suggestion', expr = true, silent = true, noremap = false })
+      vim.api.nvim_set_keymap('n', '<leader>od', 'copilot#Dismiss()', { desc = 'C[o]pilot [D]ismiss Suggestion', expr = true, silent = true, noremap = false })
+
+      vim.g.copilot_no_tab_map = true
+    end,
   },
   {
     'CopilotC-Nvim/CopilotChat.nvim',
