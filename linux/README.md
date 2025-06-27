@@ -2,7 +2,7 @@
 
 Stuff for Linux
 
-## setup-symlinks.sh
+## `setup-symlinks.sh`
 
 Creates symlinks from root folder configurations for apps to the right path. e.g. nvim, alacritty, tmux, etc.
 

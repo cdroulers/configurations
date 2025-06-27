@@ -2,7 +2,7 @@
 
 Stuff for OSX
 
-## setup-symlinks
+## `setup-symlinks.sh`
 
 Creates symlinks from root folder configurations for apps to the right path. e.g. nvim, alacritty, tmux, etc.
 
