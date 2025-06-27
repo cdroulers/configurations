@@ -1,30 +1,23 @@
-# OSX
+# Linux
 
-Stuff for OSX
+Stuff for Linux
 
-## setup-symlinks
+## setup-symlinks.sh
 
 Creates symlinks from root folder configurations for apps to the right path. e.g. nvim, alacritty, tmux, etc.
 
 ## Manual steps (FOR NOW)
 
-Install tpm for tmux
+### Install tpm for tmux
 
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 Then use `prefix + I` to install plugins.
 
-## Keymaps
+### Create a shortcut for `../alacritty/show-alacritty.sh`
 
-Remaps I've set in OSX to make more sense
+In Gnome, Settings -> Keyboard -> Custom Shortcuts.
 
-ctrl+cmd+left|right => move virtual desktop left or right
-ctrl+cmd+up => Mission control (not very useful)
+Assign Ctrl+# to the `../alacritty/show-alacritty.sh` script!
 
-ctrl+shift+space => switch keyboard layout (until I figure out how to make Canadian - PC stick for logins
-cmd+D => Show desktop (lel windows)
-
-ctrl+alt+left|right|up|down => Halve windows
-ctrl+alt+F => Fill (fullscreen)
-ctrl+alt+C => Center
-ctrl+alt+Z => Zoom (maximize)
+Only focuses the window, but that's pretty neat nonetheless.
