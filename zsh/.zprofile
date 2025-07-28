@@ -24,5 +24,10 @@ fi
 
 export GPG_TTY=$(tty)
 
+# Load custom environment variables
+if [[ -e "$HOME/.zprofile.local" ]]; then
+	source "$HOME/.zprofile.local"
+fi
+
 # Prevent ctrl+D closing terminals inside tmux (cause I hit it while moving around with nvim keybinds)
 set -o ignoreeof
