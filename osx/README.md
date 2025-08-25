@@ -28,3 +28,14 @@ ctrl+alt+left|right|up|down => Halve windows
 ctrl+alt+F => Fill (fullscreen)
 ctrl+alt+C => Center
 ctrl+alt+Z => Zoom (maximize)
+
+## Raycast
+
+Install [Raycast](https://www.raycast.com/).
+
+In the settings, remap the "hyper" key to right_command. Then it's easy to remap extensions to hyper+something.
+
+Hyper+a => Alacritty
+Hyper+b => Brave
+Hyper+f => Firefox
+Hyper+s => Slack
