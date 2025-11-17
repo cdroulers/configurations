@@ -338,9 +338,20 @@ require('lazy').setup({
           normal = '',
           insert = '',
         },
+        reset = {
+          normal = '<leader>or',
+          insert = '',
+        },
       },
     },
     -- See Commands section for default commands if you want to lazy load on them
+    keys = {
+      {
+        '<leader>oo',
+        '<cmd>CopilotChat<cr>',
+        desc = 'C[o]pilot [O]pen Window',
+      },
+    },
   },
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -442,6 +453,7 @@ require('lazy').setup({
         { '<leader>h', group = '[H]arpoon' },
         { '<leader>b', group = '[B]uffer' },
         { '<leader>g', group = '[G]it' },
+        { '<leader>or', group = 'C[o]pilot [R]eset window' },
       },
     },
   },

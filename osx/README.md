@@ -39,3 +39,5 @@ Hyper+a => Alacritty
 Hyper+b => Brave
 Hyper+f => Firefox
 Hyper+s => Slack
+
+Followed this post: https://arkadiuszchmura.com/posts/switching-between-apps-using-shortcuts-on-macos/
