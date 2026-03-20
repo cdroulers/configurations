@@ -453,7 +453,8 @@ require('lazy').setup({
         { '<leader>h', group = '[H]arpoon' },
         { '<leader>b', group = '[B]uffer' },
         { '<leader>g', group = '[G]it' },
-        { '<leader>or', group = 'C[o]pilot [R]eset window' },
+        { '<leader>o', group = 'C[o]pilot' },
+        { '<leader>c', group = '[C]opy' },
       },
     },
   },
@@ -566,6 +567,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set('n', '<leader>cf', ":let @+ = expand('%')<CR>", { desc = '[C]opy [F]ilename' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
@@ -830,6 +832,36 @@ require('lazy').setup({
       --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+      vim.lsp.config('vue_ls', {
+        init_options = {
+          vue = {
+            hybridMode = false,
+          },
+        },
+        settings = {
+          typescript = {
+            inlayHints = {
+              enumMemberValues = {
+                enabled = true,
+              },
+              functionLikeReturnTypes = {
+                enabled = true,
+              },
+              propertyDeclarationTypes = {
+                enabled = true,
+              },
+              parameterTypes = {
+                enabled = true,
+                suppressWhenArgumentMatchesName = true,
+              },
+              variableTypes = {
+                enabled = true,
+              },
+            },
+          },
+        },
+      })
+
       local vue_language_server_path = vim.fn.expand '$MASON/packages/vue-language-server/node_modules/@vue/language-server'
       vim.lsp.config('ts_ls', {
         init_options = {
@@ -838,6 +870,7 @@ require('lazy').setup({
               name = '@vue/typescript-plugin',
               location = vue_language_server_path,
               languages = { 'vue' },
+              configNamespace = 'typescript',
             },
           },
         },
@@ -913,6 +946,7 @@ require('lazy').setup({
         yml = { 'prettier', stop_after_first = true },
         yaml = { 'prettier', stop_after_first = true },
         markdown = { 'prettier', stop_after_first = true },
+        sql = { 'sqlfluff', stop_after_first = true },
       },
     },
   },

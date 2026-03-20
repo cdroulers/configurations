@@ -14,6 +14,8 @@ if [[ $TMUX_PANE ]]; then
   HISTFILE=$HOME/.bash_history_tmux_${TMUX_PANE:1}
 fi
 
+export PATH="$HOME/.local/bin:$PATH"
+
 source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
