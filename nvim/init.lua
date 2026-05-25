@@ -378,6 +378,8 @@ require('lazy').setup({
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
+      current_line_blame = true,
+
       signs = {
         add = { text = '+' },
         change = { text = '~' },
@@ -810,7 +812,7 @@ require('lazy').setup({
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
-        ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
+        ensure_installed = { 'vue_ls@3.0.8' }, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
         automatic_enable = true,
         handlers = {
           function(server_name)
@@ -897,6 +899,9 @@ require('lazy').setup({
           },
         },
       })
+
+      vim.lsp.config('oxlint', {})
+      vim.lsp.config('oxfmt', {})
     end,
   },
 
@@ -916,6 +921,14 @@ require('lazy').setup({
     },
     opts = {
       notify_on_error = false,
+      formatters = {
+        oxfmt = {
+          command = 'oxfmt',
+          args = { '--stdin-filepath', '$FILENAME' },
+          stdin = true,
+          prefer_local = 'node_modules/.bin',
+        },
+      },
       format_on_save = function(bufnr)
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
@@ -936,16 +949,16 @@ require('lazy').setup({
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        javascript = { 'prettier', stop_after_first = true },
-        javascriptreact = { 'prettier', stop_after_first = true },
-        typescript = { 'prettier', stop_after_first = true },
-        typescriptreact = { 'prettier', stop_after_first = true },
-        vue = { 'prettier', stop_after_first = true },
-        json = { 'prettier', stop_after_first = true },
-        jsonc = { 'prettier', stop_after_first = true },
-        yml = { 'prettier', stop_after_first = true },
-        yaml = { 'prettier', stop_after_first = true },
-        markdown = { 'prettier', stop_after_first = true },
+        javascript = { 'oxfmt', 'prettier', stop_after_first = true },
+        javascriptreact = { 'oxfmt', 'prettier', stop_after_first = true },
+        typescript = { 'oxfmt', 'prettier', stop_after_first = true },
+        typescriptreact = { 'oxfmt', 'prettier', stop_after_first = true },
+        vue = { 'oxfmt', 'prettier', stop_after_first = true },
+        json = { 'oxfmt', 'prettier', stop_after_first = true },
+        jsonc = { 'oxfmt', 'prettier', stop_after_first = true },
+        yml = { 'oxfmt', 'prettier', stop_after_first = true },
+        yaml = { 'oxfmt', 'prettier', stop_after_first = true },
+        markdown = { 'oxfmt', 'prettier', stop_after_first = true },
         sql = { 'sqlfluff', stop_after_first = true },
       },
     },
