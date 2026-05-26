@@ -920,18 +920,22 @@ require('lazy').setup({
       },
     },
     opts = function()
-      local util = require('conform.util')
+      local util = require 'conform.util'
 
       return {
         notify_on_error = false,
         formatters = {
           oxfmt = {
-            command = util.from_node_modules('oxfmt'),
+            command = util.from_node_modules 'oxfmt',
             condition = function(_, ctx)
               local pkg = vim.fs.find('package.json', { upward = true, path = ctx.dirname, limit = 1 })[1]
-              if not pkg then return false end
+              if not pkg then
+                return false
+              end
               local ok, decoded = pcall(vim.fn.json_decode, table.concat(vim.fn.readfile(pkg), '\n'))
-              if not ok then return false end
+              if not ok then
+                return false
+              end
               local deps = vim.tbl_extend('force', decoded.dependencies or {}, decoded.devDependencies or {})
               return deps['oxfmt'] ~= nil
             end,
@@ -939,7 +943,7 @@ require('lazy').setup({
             stdin = true,
           },
           prettier = {
-            command = util.from_node_modules('prettier'),
+            command = util.from_node_modules 'prettier',
           },
         },
         format_on_save = function(bufnr)
