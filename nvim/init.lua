@@ -927,6 +927,14 @@ require('lazy').setup({
         formatters = {
           oxfmt = {
             command = util.from_node_modules('oxfmt'),
+            condition = function(_, ctx)
+              local pkg = vim.fs.find('package.json', { upward = true, path = ctx.dirname, limit = 1 })[1]
+              if not pkg then return false end
+              local ok, decoded = pcall(vim.fn.json_decode, table.concat(vim.fn.readfile(pkg), '\n'))
+              if not ok then return false end
+              local deps = vim.tbl_extend('force', decoded.dependencies or {}, decoded.devDependencies or {})
+              return deps['oxfmt'] ~= nil
+            end,
             args = { '--stdin-filepath', '$FILENAME' },
             stdin = true,
           },
