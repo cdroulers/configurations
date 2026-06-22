@@ -84,6 +84,10 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
+-- Remove weird auto-complete for SQL files
+-- https://github.com/neovim/neovim/issues/14433
+vim.g.omni_sql_default_compl_type = 'syntax'
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
