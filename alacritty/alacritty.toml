@@ -126,6 +126,11 @@ action = "None"
 key = "F12"
 mods = "None"
 
+[[keyboard.bindings]]
+action = "None"
+key = "W"
+mods = "Command"
+
 
 [scrolling]
 history = 5000
